@@ -1,0 +1,17 @@
+{% extends 'MyFinances/layout.html' %}
+
+{% block content %}
+
+{{title}} <!-- title from method def index in views.py -->
+
+{% for finop in finops %}
+
+    <p>{% if finop.is_expances %}
+        {{ finop }}
+    {% else %}
+        -{{ finop }}
+    {% endif %}
+    </p>
+{% endfor %}
+
+{% endblock %}
